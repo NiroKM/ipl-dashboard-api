@@ -41,4 +41,9 @@ public class TeamController {
 	public List<Match> getMatchForYear(@PathVariable String teamName, @RequestParam int year){
 		return matchDao.findMatchesByTeamForYear(teamName, year);
 	}
+	
+	@GetMapping("/team")
+	public Iterable<Team> getAllTeams(){
+		return teamRepository.findAll();
+	}
 }
